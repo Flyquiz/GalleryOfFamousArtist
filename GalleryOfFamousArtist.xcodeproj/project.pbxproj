@@ -10,8 +10,9 @@
 		AA3A615C2B7B90B300C471C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615B2B7B90B300C471C3 /* AppDelegate.swift */; };
 		AA3A615E2B7B90B300C471C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */; };
 		AA3A61602B7B90B300C471C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615F2B7B90B300C471C3 /* ViewController.swift */; };
-		AA3A61652B7B90B800C471C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A61642B7B90B800C471C3 /* Assets.xcassets */; };
 		AA3A61682B7B90B800C471C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A61662B7B90B800C471C3 /* LaunchScreen.storyboard */; };
+		AA3A61712B7B967800C471C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A61702B7B967800C471C3 /* Assets.xcassets */; };
+		AA3A61732B7B970C00C471C3 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = AA3A61722B7B970C00C471C3 /* artists.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +20,10 @@
 		AA3A615B2B7B90B300C471C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA3A615F2B7B90B300C471C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA3A61642B7B90B800C471C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A61672B7B90B800C471C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3A61692B7B90B800C471C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3A61702B7B967800C471C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA3A61722B7B970C00C471C3 /* artists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,20 @@
 				AA3A615B2B7B90B300C471C3 /* AppDelegate.swift */,
 				AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */,
 				AA3A615F2B7B90B300C471C3 /* ViewController.swift */,
-				AA3A61642B7B90B800C471C3 /* Assets.xcassets */,
 				AA3A61662B7B90B800C471C3 /* LaunchScreen.storyboard */,
 				AA3A61692B7B90B800C471C3 /* Info.plist */,
+				AA3A616F2B7B966400C471C3 /* Resources */,
 			);
 			path = GalleryOfFamousArtist;
+			sourceTree = "<group>";
+		};
+		AA3A616F2B7B966400C471C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA3A61702B7B967800C471C3 /* Assets.xcassets */,
+				AA3A61722B7B970C00C471C3 /* artists.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +134,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A61682B7B90B800C471C3 /* LaunchScreen.storyboard in Resources */,
-				AA3A61652B7B90B800C471C3 /* Assets.xcassets in Resources */,
+				AA3A61732B7B970C00C471C3 /* artists.json in Resources */,
+				AA3A61712B7B967800C471C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
