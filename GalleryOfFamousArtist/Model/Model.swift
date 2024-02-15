@@ -17,9 +17,10 @@ struct Artist: Decodable {
     let image: String
     let works: [Work]
     
-    struct Work: Decodable {
-        let title: String
-        let image: String
-        let info: String
-    }
+}
+
+struct Work: Decodable {
+    let title: String
+    let image: String
+    let info: String
 }

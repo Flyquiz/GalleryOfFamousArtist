@@ -42,6 +42,13 @@ final class ArtistCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        nameLabel.text = nil
+        descriptionLabel.text = nil
+        artistImageView.image = nil
+    }
+    
     //TODO: Доделать лейаут
     private func setupLayout() {
         contentView.backgroundColor = .systemGray5

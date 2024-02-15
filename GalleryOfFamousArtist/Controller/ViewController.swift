@@ -30,6 +30,8 @@ final class ViewController: UIViewController {
 
     
     private func setupLayout() {
+        title = "Gallery of Famous Artist"
+        
         view.backgroundColor = .systemGray6
         view.addSubview(mainCollectionView)
         

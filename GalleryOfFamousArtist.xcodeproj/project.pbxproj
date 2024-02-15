@@ -18,6 +18,7 @@
 		AA3A61802B7BA47B00C471C3 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */; };
 		AA3A61822B7BA6C700C471C3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A61812B7BA6C700C471C3 /* Extensions.swift */; };
 		AA572BA32B7E668800460E80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA572BA22B7E668800460E80 /* DetailViewController.swift */; };
+		AA572BA52B7E823D00460E80 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA572BA42B7E823D00460E80 /* WorkCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		AA3A61812B7BA6C700C471C3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA572BA22B7E668800460E80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA572BA42B7E823D00460E80 /* WorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				AA3A61662B7B90B800C471C3 /* LaunchScreen.storyboard */,
 				AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */,
+				AA572BA42B7E823D00460E80 /* WorkCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A61602B7B90B300C471C3 /* ViewController.swift in Sources */,
+				AA572BA52B7E823D00460E80 /* WorkCell.swift in Sources */,
 				AA3A615C2B7B90B300C471C3 /* AppDelegate.swift in Sources */,
 				AA3A61802B7BA47B00C471C3 /* ArtistCell.swift in Sources */,
 				AA3A617D2B7B9A8200C471C3 /* ModelData.swift in Sources */,

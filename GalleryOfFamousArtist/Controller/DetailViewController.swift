@@ -9,11 +9,19 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
-    //    private var artist: Artist! {
-    //        didSet {
-    //
-    //        }
-    //    }
+    private var artistWorks: [Work]?
+    
+    private lazy var mainCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(WorkCell.self, forCellWithReuseIdentifier: WorkCell.identifier)
+        collectionView.flashScrollIndicators()
+        return collectionView
+    }()
     
     private let mainScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -72,7 +80,7 @@ final class DetailViewController: UIViewController {
     
     convenience init(artist: Artist) {
         self.init()
-        //        self.artist = artist
+        self.artistWorks = artist.works
         nameLabel.text = artist.name
         descriptionLabel.text = artist.bio
         artistImageView.image = UIImage(named: artist.image)
@@ -89,7 +97,8 @@ final class DetailViewController: UIViewController {
         
         view.addSubview(mainScrollView)
         mainScrollView.addSubview(contentView)
-        [nameLabel,
+        [mainCollectionView,
+         nameLabel,
          aboutLabel,
          descriptionLabel,
          artistImageView,
@@ -129,8 +138,52 @@ final class DetailViewController: UIViewController {
             
             worksLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset * 2),
             worksLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
-            worksLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -inset)
+            
+            mainCollectionView.topAnchor.constraint(equalTo: worksLabel.bottomAnchor, constant: inset / 2),
+            mainCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            mainCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
+            mainCollectionView.heightAnchor.constraint(equalToConstant: 300),
+            mainCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            
             
         ])
+    }
+}
+
+
+
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        artistWorks?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkCell.identifier, for: indexPath) as! WorkCell
+        guard let work = artistWorks?[indexPath.item] else { fatalError("Can't create a cell: WorkCell")
+        }
+        cell.setupCell(work: work)
+        return cell
+    }
+}
+
+extension DetailViewController: UICollectionViewDelegateFlowLayout {
+    var inset: CGFloat { 20 }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = collectionView.bounds.height
+        let width = (collectionView.bounds.width) / 2
+        return CGSize(width: width, height: height)
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+//    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return inset
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        inset
     }
 }
