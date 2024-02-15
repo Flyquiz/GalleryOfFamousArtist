@@ -15,6 +15,8 @@
 		AA3A61732B7B970C00C471C3 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = AA3A61722B7B970C00C471C3 /* artists.json */; };
 		AA3A617B2B7B994700C471C3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617A2B7B994700C471C3 /* Model.swift */; };
 		AA3A617D2B7B9A8200C471C3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617C2B7B9A8200C471C3 /* ModelData.swift */; };
+		AA3A61802B7BA47B00C471C3 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */; };
+		AA3A61822B7BA6C700C471C3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A61812B7BA6C700C471C3 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +25,13 @@
 		AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA3A615F2B7B90B300C471C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA3A61672B7B90B800C471C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AA3A61692B7B90B800C471C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3A61692B7B90B800C471C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GalleryOfFamousArtist/Application/Info.plist; sourceTree = SOURCE_ROOT; };
 		AA3A61702B7B967800C471C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A61722B7B970C00C471C3 /* artists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
 		AA3A617A2B7B994700C471C3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AA3A617C2B7B9A8200C471C3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
+		AA3A61812B7BA6C700C471C3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3A615A2B7B90B300C471C3 /* GalleryOfFamousArtist */,
+				AA3A61812B7BA6C700C471C3 /* Extensions.swift */,
 				AA3A61592B7B90B300C471C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3A61662B7B90B800C471C3 /* LaunchScreen.storyboard */,
+				AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,9 +192,11 @@
 			files = (
 				AA3A61602B7B90B300C471C3 /* ViewController.swift in Sources */,
 				AA3A615C2B7B90B300C471C3 /* AppDelegate.swift in Sources */,
+				AA3A61802B7BA47B00C471C3 /* ArtistCell.swift in Sources */,
 				AA3A617D2B7B9A8200C471C3 /* ModelData.swift in Sources */,
 				AA3A615E2B7B90B300C471C3 /* SceneDelegate.swift in Sources */,
 				AA3A617B2B7B994700C471C3 /* Model.swift in Sources */,
+				AA3A61822B7BA6C700C471C3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +342,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XNY2R8437;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryOfFamousArtist/Info.plist;
+				INFOPLIST_FILE = GalleryOfFamousArtist/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -361,7 +369,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6XNY2R8437;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GalleryOfFamousArtist/Info.plist;
+				INFOPLIST_FILE = GalleryOfFamousArtist/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

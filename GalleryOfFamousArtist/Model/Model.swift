@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct Artists: Decodable {
+    let artists: [Artist]
+}
+
 struct Artist: Decodable {
     let name: String
     let bio: String

@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ModelData {
+final class ModelData {
+    
     lazy var artists: [Artist] = load("artists.json")
     
     
-    let decoder = JSONDecoder()
-    
-    func load<T: Decodable>(_ filename: String) -> T {
+    func load(_ filename: String) -> [Artist] {
         let data: Data
+        let decoder = JSONDecoder()
         
         guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
             fatalError("Couldn't find \(filename) in main bundle")
@@ -27,9 +27,10 @@ class ModelData {
         }
         
         do {
-            return try decoder.decode(T.self, from: data)
+            let decodedData = try decoder.decode(Artists.self, from: data)
+            return decodedData.artists
         } catch {
-            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+            fatalError("Couldn't parse \(filename) as \(Artists.self):\n\(error)")
         }
     }
 }
