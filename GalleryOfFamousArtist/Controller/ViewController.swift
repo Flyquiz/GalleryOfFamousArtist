@@ -77,7 +77,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = DetailViewController(artist: modelData.artists[indexPath.item])
+        let detailVC = DetailArtistViewController(artist: modelData.artists[indexPath.item])
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

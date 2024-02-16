@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA10A6D62B7E9D9D00EFEC67 /* DetailWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA10A6D52B7E9D9D00EFEC67 /* DetailWorkViewController.swift */; };
 		AA3A615C2B7B90B300C471C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615B2B7B90B300C471C3 /* AppDelegate.swift */; };
 		AA3A615E2B7B90B300C471C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */; };
 		AA3A61602B7B90B300C471C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A615F2B7B90B300C471C3 /* ViewController.swift */; };
@@ -17,11 +18,12 @@
 		AA3A617D2B7B9A8200C471C3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617C2B7B9A8200C471C3 /* ModelData.swift */; };
 		AA3A61802B7BA47B00C471C3 /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */; };
 		AA3A61822B7BA6C700C471C3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A61812B7BA6C700C471C3 /* Extensions.swift */; };
-		AA572BA32B7E668800460E80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA572BA22B7E668800460E80 /* DetailViewController.swift */; };
+		AA572BA32B7E668800460E80 /* DetailArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA572BA22B7E668800460E80 /* DetailArtistViewController.swift */; };
 		AA572BA52B7E823D00460E80 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA572BA42B7E823D00460E80 /* WorkCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA10A6D52B7E9D9D00EFEC67 /* DetailWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorkViewController.swift; sourceTree = "<group>"; };
 		AA3A61582B7B90B300C471C3 /* GalleryOfFamousArtist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryOfFamousArtist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A615B2B7B90B300C471C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A615D2B7B90B300C471C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		AA3A617C2B7B9A8200C471C3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		AA3A617F2B7BA47B00C471C3 /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		AA3A61812B7BA6C700C471C3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AA572BA22B7E668800460E80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA572BA22B7E668800460E80 /* DetailArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailArtistViewController.swift; sourceTree = "<group>"; };
 		AA572BA42B7E823D00460E80 /* WorkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				AA3A615F2B7B90B300C471C3 /* ViewController.swift */,
-				AA572BA22B7E668800460E80 /* DetailViewController.swift */,
+				AA572BA22B7E668800460E80 /* DetailArtistViewController.swift */,
+				AA10A6D52B7E9D9D00EFEC67 /* DetailWorkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,7 +207,8 @@
 				AA3A615E2B7B90B300C471C3 /* SceneDelegate.swift in Sources */,
 				AA3A617B2B7B994700C471C3 /* Model.swift in Sources */,
 				AA3A61822B7BA6C700C471C3 /* Extensions.swift in Sources */,
-				AA572BA32B7E668800460E80 /* DetailViewController.swift in Sources */,
+				AA10A6D62B7E9D9D00EFEC67 /* DetailWorkViewController.swift in Sources */,
+				AA572BA32B7E668800460E80 /* DetailArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

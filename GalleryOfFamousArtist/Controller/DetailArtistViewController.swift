@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailArtistViewController: UIViewController {
     
-    private var artistWorks: [Work]?
+    private var artistWorks: [Work]!
     
     private lazy var mainCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -152,7 +152,7 @@ final class DetailViewController: UIViewController {
 
 
 
-extension DetailViewController: UICollectionViewDataSource {
+extension DetailArtistViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         artistWorks?.count ?? 0
     }
@@ -166,7 +166,7 @@ extension DetailViewController: UICollectionViewDataSource {
     }
 }
 
-extension DetailViewController: UICollectionViewDelegateFlowLayout {
+extension DetailArtistViewController: UICollectionViewDelegateFlowLayout {
     var inset: CGFloat { 20 }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -185,5 +185,10 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         inset
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailWorkViewController(work: artistWorks[indexPath.item])
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
