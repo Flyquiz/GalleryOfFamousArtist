@@ -42,7 +42,6 @@ final class ViewController: UIViewController {
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-
 }
 
 

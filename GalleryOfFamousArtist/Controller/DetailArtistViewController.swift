@@ -120,7 +120,8 @@ final class DetailArtistViewController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: mainScrollView.widthAnchor),
             
             
-            artistImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            
+            artistImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             artistImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             artistImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             artistImageView.heightAnchor.constraint(equalToConstant: 300),
@@ -134,18 +135,16 @@ final class DetailArtistViewController: UIViewController {
             descriptionLabel.topAnchor.constraint(equalTo: aboutLabel.bottomAnchor, constant: inset / 2),
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
-            descriptionLabel.widthAnchor.constraint(equalToConstant: descriptionLabel.intrinsicContentSize.width),
             
             worksLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: inset * 2),
             worksLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
+            
             
             mainCollectionView.topAnchor.constraint(equalTo: worksLabel.bottomAnchor, constant: inset / 2),
             mainCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
             mainCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),
             mainCollectionView.heightAnchor.constraint(equalToConstant: 300),
             mainCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-            
-            
         ])
     }
 }

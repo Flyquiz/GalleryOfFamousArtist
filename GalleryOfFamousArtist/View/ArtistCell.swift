@@ -13,6 +13,7 @@ final class ArtistCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.numberOfLines = 1
         return label
     }()
     //TODO: Vertical text alignment
@@ -22,6 +23,7 @@ final class ArtistCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 14, weight: .thin)
         label.numberOfLines = 0
         label.textAlignment = .justified
+        label.preferredMaxLayoutWidth = 0
         return label
     }()
     
@@ -57,19 +59,22 @@ final class ArtistCell: UICollectionViewCell {
          artistImageView].forEach { contentView.addSubview($0) }
         
         let imageSize: CGFloat = 100
+        let cellInset: CGFloat = 10
+        
+        nameLabel.setContentHuggingPriority(.defaultHigh + 1, for: .vertical)
         NSLayoutConstraint.activate([
-            artistImageView.heightAnchor.constraint(equalToConstant: imageSize * 1.5),
+            artistImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: cellInset),
+            artistImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: cellInset),
+            artistImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -cellInset),
             artistImageView.widthAnchor.constraint(equalToConstant: imageSize),
-            artistImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            artistImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            artistImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
             
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: cellInset),
             nameLabel.leadingAnchor.constraint(equalTo: artistImageView.trailingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -cellInset),
             
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
-            descriptionLabel.leadingAnchor.constraint(equalTo: artistImageView.trailingAnchor, constant: 20),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            descriptionLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             descriptionLabel.bottomAnchor.constraint(equalTo: artistImageView.bottomAnchor)
         ])
     }
