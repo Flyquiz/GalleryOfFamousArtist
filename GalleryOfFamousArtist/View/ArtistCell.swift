@@ -16,7 +16,7 @@ final class ArtistCell: UICollectionViewCell {
         label.numberOfLines = 1
         return label
     }()
-    //TODO: Vertical text alignment
+
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,6 @@ final class ArtistCell: UICollectionViewCell {
         artistImageView.image = nil
     }
     
-    //TODO: Доделать лейаут
     private func setupLayout() {
         contentView.backgroundColor = .systemGray5
         [nameLabel,

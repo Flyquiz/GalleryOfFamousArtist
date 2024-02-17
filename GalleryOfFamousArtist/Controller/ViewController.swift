@@ -7,9 +7,12 @@
 
 import UIKit
 
+//MARK: - ViewController
 final class ViewController: UIViewController {
     
     private let modelData = ModelData()
+    
+    private var filteredResults = [Artist]()
     
     private lazy var mainCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -21,17 +24,27 @@ final class ViewController: UIViewController {
         collectionView.register(ArtistCell.self, forCellWithReuseIdentifier: ArtistCell.identifier)
         return collectionView
     }()
+    
+    private lazy var searchController: UISearchController = {
+        let searchVC = UISearchController()
+        searchVC.delegate = self
+        searchVC.searchBar.delegate = self
+        searchVC.searchResultsUpdater = self
+        searchVC.obscuresBackgroundDuringPresentation = false
+        searchVC.definesPresentationContext = true
+        searchVC.searchBar.placeholder = "Find Artist"
+        return searchVC
+    }()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        setupNavigationBar()
     }
 
     
     private func setupLayout() {
-        title = "Gallery of Famous Artist"
-        
         view.backgroundColor = .systemGray6
         view.addSubview(mainCollectionView)
         
@@ -42,18 +55,34 @@ final class ViewController: UIViewController {
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    private func setupNavigationBar() {
+        title = "Gallery of Famous Artist"
+        navigationItem.searchController = searchController
+    }
 }
 
 
-
+//MARK: - CollectionView dataSource/delegate
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        modelData.artists.count
+        if isFiltering {
+            return filteredResults.count
+        } else {
+            return modelData.artists.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var artist: Artist
+        if isFiltering {
+            artist = filteredResults[indexPath.item]
+        } else {
+            artist = modelData.artists[indexPath.item]
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ArtistCell.identifier, for: indexPath) as! ArtistCell
-        cell.setupCell(modelData.artists[indexPath.item])
+        cell.setupCell(artist)
         return cell
     }
 }
@@ -76,7 +105,49 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = DetailArtistViewController(artist: modelData.artists[indexPath.item])
+        var artist: Artist
+        if isFiltering {
+            artist = filteredResults[indexPath.item]
+        } else {
+            artist = modelData.artists[indexPath.item]
+        }
+        
+        let detailVC = DetailArtistViewController(artist: artist)
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+
+//MARK: - SearchController delegates
+extension ViewController: UISearchControllerDelegate, UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if filteredResults.count == 1 {
+            let detailVC = DetailArtistViewController(artist: filteredResults.first!)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
+}
+
+extension ViewController: UISearchResultsUpdating {
+    
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filterContentForSearchText(_ searchText: String) {
+        filteredResults = modelData.artists.filter({ (artist: Artist) -> Bool in
+            artist.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        mainCollectionView.reloadData()
     }
 }

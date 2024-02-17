@@ -63,7 +63,6 @@ final class DetailArtistViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        //        imageView.backgroundColor = .systemGray4
         return imageView
     }()
     
@@ -173,14 +172,6 @@ extension DetailArtistViewController: UICollectionViewDelegateFlowLayout {
         let width = (collectionView.bounds.width) / 2
         return CGSize(width: width, height: height)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return inset
-//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         inset
